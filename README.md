@@ -26,3 +26,5 @@ Please follow the instructions below and fill in the information requested when 
 ## Run Instructions
 1. npm start
 2. localhost:3000 
+3. localhost:3000/registration.html
+4. localhost:3000/postimage.html
