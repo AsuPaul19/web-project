@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <title>Express</title> -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSC317 Website Design</title>
+        <link rel="stylesheet"type="text/css" href="../stylesheets/websit.css">
+
+    </head>
+    <div class="website">
+        <header>
+            <a href="#"> <img id="myLoger" src="https://res.cloudinary.com/drsto9lek/image/upload/c_scale,w_150/v1588366151/youtube_profile_image_mzwudr.png"> 
+            </a>
+
+            <nav>
+                <ul class="nav_links">
+                    <li id="lis"> <a href="homepage.html"> HOME</a></li>
+                    <li id="lis"> <a href="signin.html">Signin</a></li>
+                    <li> <a class="cta" href="postimageform.html"> <button> Post</button> </a>  </li>
+                </ul>
+            </nav>
+
+            <h3> PPA PAUL's PHOTOS APP</h3>
+            <div class="search-box">
+                <input type="text" name="" class="search-text" placeholder="Type to search">
+                <a class="search-btn" href="#">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+        </header>
+        
+        <body>
+            <form action="dbtest/createUser" method="POST" enctype="application/x-www-form-urlencoded" > 
+            <div class="all">
+                <h1>Sign in Form</h1>
+                <div class="everything">
+                    <input type="text" id="user" placeholder="USERNAME">
+                    <input type="text" id="pass" placeholder="PASSWORD">
+                    <br>
+                    <a href="#"> <button id="submit"> SUBMIT</button></a>
+                    <!-- <button id="clear"> CLEAR</button>
+                    <input type="password" id="pass" placeholder="PASSWORD" name="password"> 
+                    <br> -->
+                    <button id="clear"> CLEAR</button>
+                    <p> Do not have an account? <a href="Registrationform.html"> Register Here!</a></p>
+
+                </div>
+            </div>
+            <p id="end"></p>
+            
+        </body>
+    </div>
+</html>

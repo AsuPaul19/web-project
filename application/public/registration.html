@@ -5,70 +5,60 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Csc317 Website Design</title>
-    <link rel="stylesheet"type="text/css" href="stylesheets/grid.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet"type="text/css" href="stylesheets/web.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/style.css"> -->
   </head>
   <body>
     <form action="dbtest/createUser" method="POST" enctype="application/x-www-form-urlencoded" > 
     <!-- <form action="/registration/cc" method="POST"> -->
       <h1>Registration Form</h1>
-      <fieldset>
+      <!-- <fieldset>
         <h2>Enter your details below</h2>
-        <!-- <legend>Customer Personal Information</legend>
-        
-        <ul>
-        <label for="fname">First Name</label>
-        <br>
-        <input type="text" placeholder="Enter First Name" name="fname" required />
-        <br>
-
-        <br>
-        <label for="lname">Last Name</label>
-        <br>
-        <input type="text" placeholder="Enter Last Name" name="lname" required />
+        <legend>Customer Personal Information</legend>
+         -->
+        <!-- <ul>
+        <input type="text" placeholder="First Name" name="fname" required />
+        <input type="text" placeholder="Last Name" name="lname" required />
         <br>
 
         <br>
-        <label for="addrs">Address</label>
-        <br>
-        <input type="text" placeholder="Enter Your Address" name="addrs" required />
-        <br>
+        <input type="text" placeholder="Your Address" name="addrs" required />
+        <br> -->
 
-        <br>
-        <label for="zipc">Zip Code</label>
-        <br>
-        <input type="number" placeholder="Enter ZipCode" name="zipc" required/>
+        <!-- <br>
+        <input type="text" placeholder="Enter ZipCode" name="zipc" required/> -->
         </ul>
 
-      </fieldset>
-      <br> -->
+      <!-- </fieldset> -->
+      <br>
       <fieldset> 
         <legend>Sign-Up for a free Account</legend>
         <ul>
-          <label for="uname">Username</label>
+          <input type="text" placeholder="First Name" name="fname" required />
+          <input type="text" placeholder="Last Name" name="lname" required />
           <br>
+          <!-- <label for="uname">Username</label>
+          <br> -->
           <!-- <input type="text" placeholder="Enter Username" name="username" required> -->
           <input id="username" placeholder="Enter Username" name="username" required/>
-          <br>
+          <!-- <br> -->
 
-          <br>
-          <label for="email">Enter Your Email</label>
-          <br>
-          <input id="email" placeholder="email" name="email" required />
+          <!-- <br>
+          <label for="email">Enter Your Email</label> -->
+          <!-- <br> -->
+          <input type="email" placeholder="enter email" name="email" required />
           <!-- <input type="email" placeholder="Enter email address" name="email" required> -->
           <br>
 
           <br>
-          <label for="psw">Password</label>
-          <br>
           <!-- <input id="password" name="password" /> -->
-          <input id="password" placeholder="Enter Password" name="password" required>
-          <br>
+          <input type="password" placeholder="Enter Password" name="password" required>
+          <!-- <br> -->
         
           <!-- <br>
           <label for="cpsw">Confirm Password</label>
-          <br>
-          <input id="password" placeholder="Confirm Password" name="password" required> -->
+          <br> -->
+          <input type="password" placeholder="Confirm Password" name="password" required>
           <br>
 
           <input type="checkbox" checked name="remember">Remember Password

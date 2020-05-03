@@ -44,9 +44,11 @@ router.post('/createUser',(req, res, next) =>{
     let baseSQL = 'INSERT INTO users (username, email, password, created) VALUES (?, ?, ?, now())';
     db.query(baseSQL, [username, email, password]).then(([results, fields]) =>{
         if(results && results.affectedRows){
-            res.send('user was made');
+            // res.redirect('/login.html');
+            res.redirect('/signin.html');
+            // res.send('user was made');
         }else{
-            res.redirect('/registration');
+            res.redirect('/registrationform.html');
             // res.send('user was not made for some reason');
         }
     })

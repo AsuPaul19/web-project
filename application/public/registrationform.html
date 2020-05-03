@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Express</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSC317 Website Design</title>
+    <link rel="stylesheet"type="text/css" href="../stylesheets/websit.css">
+  </head>
+
+  <body>
+    <form action="dbtest/createUser" method="POST" enctype="application/x-www-form-urlencoded" >
+
+      <div class="website">
+        <header>
+          <a href="#"> <img id="myLoger" 
+            src="https://res.cloudinary.com/drsto9lek/image/upload/c_scale,w_150/v1588366151/youtube_profile_image_mzwudr.png"> </a>
+            
+            <nav>
+              <ul class="nav_links">  
+                <li id="lis"> <a href="homepage.html"> HOME</a> </li>
+                <li id="lis"> <a href="signin.html">Signin</a></li>
+                <li> <a class="cta" href="postimageform.html"> Post</a> </li>
+              </ul>
+            </nav>
+            
+            <h3>  PPA PAUL's PHOTOS APP</h3>
+            <div class="search-box">
+              <input type="text" name="" class="search-text" placeholder="Type to search">
+              <a class="search-btn" href="#">
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+        </header>
+        
+        <body>
+          <!-- <form action="dbtest/createUser" method="POST" enctype="application/x-www-form-urlencoded" > -->
+            <fieldset>
+              <div class="all">
+                <h1> Registration Form </h1>
+                  <div class="everything">
+                    <input type="text" id="user" placeholder="First Name" name="fname">
+                    <input type="text" id="user" placeholder="Last Name" name="lname"> 
+                    <input type="email" id="pass" placeholder="Email" name="email" Required> 
+                    <input type="text" id="user" placeholder="Username" name="username"> 
+                    <input type="password" id="pass" placeholder="Password" name="password"> 
+                    <!-- <input type="password" id="pass" placeholder="Confirm Password" name="password">  -->
+                    <br>
+                      
+                    <a href="#"><button id="submit"> Register </button> </a>
+                    <a href="#">  <button id="clear"> CLEAR </button> </a>
+                    <p> Already have an account?  <a href="signin.html"> Login In </a>
+                    </div>
+                    
+                    <input type="checkbox" checked> I'm 13 years or older </label> <br>
+                    <input type="checkbox" checked> By Registering I agree to all the <a href="#"> terms and Conditions </a> </label>
+                  </div>
+            </fieldset>
+          </form>
+        </body>
+      </div>
+  </body>
+</html>
