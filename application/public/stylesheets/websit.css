@@ -4,9 +4,7 @@ h3{
   margin-top: -10%;
   margin-bottom: 12%;
 }
-/* header{
-  background-color:;
-} */
+
 #lis{
   border-radius: 45px;
   padding: 10px;
@@ -15,9 +13,7 @@ h3{
  color: #4b527d;
   border: #4b527d solid 1px;
   background:#fff;
-
 }
-
 
 #myLoger{
   margin-left: 2%;
@@ -25,15 +21,11 @@ h3{
 body{
     background-color:#dcdede ;
   opacity: .9;
-
 }
-
-/* nav{
-  background-color: black;
-} */
 
 .nav_links{
   list-style:none;
+
   float:right;
   background: none;
   margin-top: -9%;
@@ -45,13 +37,10 @@ body{
 .nav_links li{
   display: inline-block;
   padding: 0 15px;
-  /* background-color:  ; */
 }
 
 .nav_links li a{
   transition: all 0.3s ease 0s;
-   /* background-color: ;
-  float:; */
   text-decoration:none;
   padding: 10px;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -63,13 +52,12 @@ body{
 .nav_links li a:hover{
   color: black;
   opacity: .8;
-  
 }
 
 button{
 padding: 9px 25px;
   background-color: #e1faf6;
-    border:  #e1faf6 solid 1px;
+  border:  #e1faf6 solid 1px;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
@@ -81,11 +69,7 @@ button:hover{
   color: #4b527d;
   border: #4b527d solid 1px;
   background:#fff;
-
 }
-
-
-
 
 .search-box{
   position:absolute;
@@ -112,7 +96,7 @@ button:hover{
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: purple;
+  background:purple;
   display:flex;
   justify-content:center;
   align-items: center;
@@ -134,9 +118,9 @@ button:hover{
   margin-top: -2%;
   margin-bottom: 5%;
 }
-/* .website{
+.website{
   opacity: 12;
-} */
+}
 header{
   margin-bottom: 7%;
   opacity: 1.0;
@@ -183,7 +167,7 @@ h1{
   background-color: #ed0726;
 }
 
-#user, #pass{
+#user, #pass, #postTitle, #Postdescription{
   width: 40%;
   padding: 12px;
   border: 1px solid #ccc;

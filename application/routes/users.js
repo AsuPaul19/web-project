@@ -9,24 +9,27 @@ const UserError = require('../helpers/errors/UserError');
 //localhost:3000/users
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
+  res.sendFile('homepage.html', {root: 'public/'});
 });
 
-//localhost:3000/users/register
-router.post('/register', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// //localhost:3000/users/register
+// router.post('/register', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
 //////////////////////////
 
 router.get('/login', function(req, res, next) {
-  res.sendFile('login.html', {root:'public/'});
+  res.sendFile('signin.html', {root:'public/'});
 });
 
-router.get('/registration', function(req, res, next) {
+/* Get post image page. */
+router.get('/post', function(req, res, next) {
+  res.sendFile('postimage.html', {root:'public/'});
+});
+
+//localhost:300/users/register
+router.get('/register', function(req, res, next) {
   res.sendFile('registration.html', {root:'public'});
-});
-
-router.get('/registrationform', function(req, res, next) {
-  res.sendFile('Registrationform.html', {root:'public'});
 });
 
 router.get('/signin', function(req, res, next) {

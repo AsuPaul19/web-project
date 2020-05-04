@@ -5,23 +5,18 @@ var path = require("path");
 /* GET home page. */
 //localhost:3000
 router.get('/', function(req, res, next) {
-  // res.sendFile('index.html');
-  res.sendFile('homepage.html');
+  res.sendFile('index.html');
+  // res.sendFile('homepage.html');
 });
 
 /* Get login page */
 router.get('/login', function(req, res, next) {
-  res.sendFile('login.html', {root:'public/'});
-});
-
-/* Get registration page. */
-router.get('/registration', function(req, res, next) {
-  res.sendFile('registration.html', {root:'public/'});
+  res.sendFile('signin.html', {root:'public/'});
 });
 
 /* Get registrationform page. */
-router.get('/registrationform', function(req, res, next) {
-  res.sendFile('registrationform.html', {root:'public/'});
+router.get('/registration', function(req, res, next) {
+  res.sendFile('registration.html', {root:'public/'});
 });
 
 /* Get home page. */
@@ -30,8 +25,8 @@ router.get('/homepage', function(req, res, next) {
 });
 
 /* Get post image page. */
-router.get('/postimage', function(req, res, next) {
-  res.sendFile('postimageform.html', {root:'public/'});
+router.get('/post', function(req, res, next) {
+  res.sendFile('postimage.html', {root:'public/'});
 });
 
 
