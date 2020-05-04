@@ -11,22 +11,22 @@ router.get('/', function(req, res, next) {
 
 /* Get login page */
 router.get('/login', function(req, res, next) {
-  res.sendFile('signin.html', {root:'public/'});
+  res.sendFile('signin.html', {root:'public/html'});
 });
 
 /* Get registrationform page. */
-router.get('/registration', function(req, res, next) {
-  res.sendFile('registration.html', {root:'public/'});
+router.get('/register', function(req, res, next) {
+  res.sendFile('registration.html', {root:'public/html'});
 });
 
 /* Get home page. */
 router.get('/homepage', function(req, res, next) {
-  res.sendFile('homepage.html', {root:'public/'});
+  res.sendFile('homepage.html', {root:'public/html'});
 });
 
 /* Get post image page. */
 router.get('/post', function(req, res, next) {
-  res.sendFile('postimage.html', {root:'public/'});
+  res.sendFile('postimage.html', {root:'public/html'});
 });
 
 

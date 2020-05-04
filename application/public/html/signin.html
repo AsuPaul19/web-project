@@ -31,14 +31,12 @@
         </header>
         
         <body>
-            <form action="dbtest/users/login" method="POST" enctype="application/x-www-form-urlencoded"> 
-
-            <!-- <form action="dbtest/users/login" method="POST" enctype="application/x-www-form-urlencoded" >  -->
+            <form action="dbtest/users/login" method="POST" enctype="application/x-www-form-urlencoded" > 
             <div class="all">
                 <h1>Sign in Form</h1>
                 <div class="everything">
-                    <input type="text" id="user" placeholder="USERNAME">
-                    <input type="text" id="pass" placeholder="PASSWORD">
+                    <input type="text" id="user" placeholder="USERNAME" name="username" required>
+                    <input type="text" id="pass" placeholder="PASSWORD" name="password" required>
                     <br>
                     <a href="#"> <button id="submit"> SUBMIT</button></a>
                     

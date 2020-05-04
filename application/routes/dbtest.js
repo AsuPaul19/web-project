@@ -40,7 +40,6 @@ router.post('/createUser',(req, res, next) =>{
 
     // validate dat, if bad send back response
     // res.redirect('/registration');
-
     let baseSQL = 'INSERT INTO users (username, email, password, created) VALUES (?, ?, ?, now())';
     db.query(baseSQL, [username, email, password]).then(([results, fields]) =>{
         if(results && results.affectedRows){
@@ -48,7 +47,7 @@ router.post('/createUser',(req, res, next) =>{
             res.redirect('/signin.html');
             // res.send('user was made');
         }else{
-            res.redirect('/registrationform.html');
+            res.redirect('/registration.html');
             // res.send('user was not made for some reason');
         }
     })
@@ -56,5 +55,25 @@ router.post('/createUser',(req, res, next) =>{
         next(err);
     })
 })
+
+router.post('/login', (req, res, next) =>{
+    let username = req.body.username;
+    let password = req.body.password;
+
+    db.execute("SELECT * FROM users WHERE username=? AND password=?", [username, password])
+    db.query(baseSQL, [username, password]).then(([results, fields]) =>{
+        if(results && results.length == 1){
+            // successPrint('successful Login');
+            Resp.redirect('/homepage.html');
+        }else{
+            successPrint('failed to Login');
+            res.redirect('/registration.html');
+        }
+    })
+    .catch((err) =>{
+        next(err);
+    })
+})
+
 
 module.exports = router;
