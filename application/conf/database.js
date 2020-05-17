@@ -8,6 +8,8 @@ const pool = mysql.createPool({
     database:"csc317db",
     connectionLimit: 50,
     debug:false,
+    insecureAuth: true,
+    queueLimit: 0
 });
 
 const promisePool = pool.promise();

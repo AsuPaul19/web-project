@@ -8,48 +8,56 @@
         <link rel="stylesheet"type="text/css" href="../stylesheets/websit.css">
 
     </head>
-    <div class="website">
-        <header>
-            <a href="#"> <img id="myLoger" src="https://res.cloudinary.com/drsto9lek/image/upload/c_scale,w_150/v1588366151/youtube_profile_image_mzwudr.png"> 
-            </a>
-
-            <nav>
-                <ul class="nav_links">
-                    <li id="lis"> <a href="homepage.html"> HOME</a></li>
-                    <li id="lis"> <a href="signin.html">Signin</a></li>
-                    <li> <a class="cta" href="postimage.html"> <button> Post</button> </a>  </li>
-                </ul>
-            </nav>
-
-            <h3> PPA PAUL's PHOTOS APP</h3>
-            <div class="search-box">
-                <input type="text" name="" class="search-text" placeholder="Type to search">
-                <a class="search-btn" href="#">
-                    <i class="fas fa-search"></i>
+    <form action="/users/login" method="POST" enctype="application/x-www-form-urlencoded"></form>
+    <!-- <form action="dbtest/users/login" method="POST" enctype="application/x-www-form-urlencoded"> -->
+        <div class="website">
+            <header>
+                <a href="#"> <img id="myLoger" src="https://res.cloudinary.com/drsto9lek/image/upload/c_scale,w_150/v1588366151/youtube_profile_image_mzwudr.png"> 
                 </a>
-            </div>
-        </header>
-        
-        <body>
-            <form action="dbtest/users/login" method="POST" enctype="application/x-www-form-urlencoded"> 
+                <nav>
+                    <ul class="nav_links">
+                        <li id="lis"> <a href="homepage.html"> HOME</a></li>
+                        <li id="lis"> <a href="signin.html">Signin</a></li>
+                        <li id="lis"> <a href="postimage.html">Post</a></li>
+                        <!-- <li> <a class="cta" href="postimage.html"> <button> Post</button> </a>  </li> -->
+                    </ul>
+                </nav>
 
-            <!-- <form action="dbtest/users/login" method="POST" enctype="application/x-www-form-urlencoded" >  -->
-            <div class="all">
-                <h1>Sign in Form</h1>
-                <div class="everything">
-                    <input type="text" id="user" placeholder="USERNAME">
-                    <input type="text" id="pass" placeholder="PASSWORD">
-                    <br>
-                    <a href="#"> <button id="submit"> SUBMIT</button></a>
-                    
-                    <button id="clear"> CLEAR</button>
-                    <p> Do not have an account? <a href="Registration.html"> Register Here!</a></p>
-
+                <h3> PPA PAUL's PHOTOS APP</h3>
+                <div class="search-box">
+                    <input type="text" name="" class="search-text" placeholder="Type to search">
+                    <a class="search-btn" href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
                 </div>
-            </div>
-            <p id="end"></p>
+            </header>
             
-        </body>
-    </div>
+            <body>
+                <!-- <form action="dbtest/users/login" method="POST" enctype="application/x-www-form-urlencoded">  -->
+                <!-- <form action="dbtest/users/login" method="POST" enctype="application/x-www-form-urlencoded" >  -->
+                <div class="all">
+                    <h1>Sign in Form</h1>
+                    <div class="everything">
+                        <input type="text" id="user" placeholder="USERNAME" name="username" required>
+                        <input type="text" id="pass" placeholder="PASSWORD" name="password" required> 
+                        <br>
+                        <input type="text" id="pass" placeholder="Confirm PASSWORD" required>
+                        <br>
+                        <a href="#"> <button id="submit"> SUBMIT</button></a>
+                        
+                        <button id="clear"> CLEAR</button>
+                        <p> Do not have an account? <a href="registration.html"> Register Here!</a></p>
+
+                    </div>
+                </div>
+                <p id="end"></p>
+
+                <footer>
+                    <p>Asu Paul Lane &copy; 2020<br>
+                <a href="pasu@mail.sfsu.edu">Contact Us</a></p>
+                </footer>
+            </body>
+        </div>
+    </form>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"> </script>
 </html>
