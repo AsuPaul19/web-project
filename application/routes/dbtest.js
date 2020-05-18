@@ -38,12 +38,10 @@ router.post('/createUser',(req, res, next) =>{
     let email = req.body.email;
     let password = req.body.password;
 
-    // validate dat, if bad send back response
     // res.redirect('/registration');
     let baseSQL = 'INSERT INTO users (username, email, password, created) VALUES (?, ?, ?, now())';
     db.query(baseSQL, [username, email, password]).then(([results, fields]) =>{
         if(results && results.affectedRows){
-            // res.redirect('/login.html');
             res.redirect('/signin.html');
             // res.send('user was made');
         }else{
@@ -74,6 +72,4 @@ router.post('/login', (req, res, next) =>{
         next(err);
     })
 })
-
-
 module.exports = router;

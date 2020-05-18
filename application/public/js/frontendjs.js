@@ -5,7 +5,7 @@ if(document.cookie.includes('csid')){
     logButton.removeAttribute('href');
     logButton.onclick = logoutClick;
 } else {
-    let logButton = document.getElementById('lis');
+    let logButton = document.getElementById('liss');
     logButton.innerHTML = "Log In";
     logButton.setAttribute('href','/login');
 }
