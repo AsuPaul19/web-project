@@ -25,13 +25,9 @@ router.get("/register", function(req, res, next) {
 
 /* Get post image page. */
 router.use("/postimage", isLoggedIn);
+
 router.get("/postimage", function(req, res, next) {
   res.sendFile("postimage.html", {root:"public/html"});
-});
-
-//localhost:300/logout
-router.get("/logout", function(req, res, next) {
-  res.send("hello logout.html");
 });
 
 module.exports = router;

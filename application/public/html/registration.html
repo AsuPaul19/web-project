@@ -4,13 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSC317 Website Design</title>
-    <!-- <link rel="stylesheet"type="text/css" href="public/stylesheets/websit.css"> -->
     <link rel="stylesheet"type="text/css" href="/websit.css">
   </head>
 
   <body>
-    <!-- <form action="dbtest/createUser" method="POST" enctype="application/x-www-form-urlencoded" > -->
-
+    <form action="/users/register" method="POST" enctype="application/x-www-form-urlencoded" ></form>
       <div class="website">
         <header>
           <a href="#"> <img id="myLoger" 
@@ -18,24 +16,22 @@
             
             <nav>
               <ul class="nav_links">  
-                <li id="lis"> <a href="homepage.html"> HOME</a> </li>
-                <li id="lis"> <a href="signin.html">Signin</a></li>
-                <li> <a class="cta" href="postimage.html"> Post</a> </li>
+                <li id="lis"> <a href="homepage"> HOME</a> </li>
+                <li id="lis"> <a href="signin">Signin</a></li>
+                <li> <a class="cta" href="postimage"> Post</a> </li>
               </ul>
             </nav>
             
-            <h3> hh PPA PAUL's PHOTOS APP</h3>
+            <h3> PPA PAUL's PHOTOS APP</h3>
             <div class="search-box">
               <input type="text" name="" class="search-text" placeholder="Type to search">
               <a class="search-btn" href="#">
                 <i class="fas fa-search"></i>
               </a>
             </div>
-        </header>
+        </header> 
         
         <body>
-          <form action="/users/register" method="POST" enctype="application/x-www-form-urlencoded" ></form>
-          <!-- <form action="dbtest/createUser" method="POST" enctype="application/x-www-form-urlencoded" > -->
             <fieldset>
               <div class="all">
                 <h1> Registration Form </h1>
@@ -48,7 +44,7 @@
                       
                     <a href="#"><button id="submit"> Register </button> </a>
                     <a href="#">  <button id="clear"> CLEAR </button> </a>
-                    <p> Already have an account?  <a href="signin.html"> Login In </a>
+                    <p> Already have an account?  <a href="signin"> Login In </a>
                     </div>
                     
                     <input type="checkbox" checked> I'm 13 years or older </label> 
@@ -60,7 +56,7 @@
         </body>
       </div>
       <footer>
-        <p>Asu Paul Lane @ c 2020<br>
+        <p>Asu Paul Lane &copy; 2020<br>
         <a href="pasu@mail.sfsu.edu">Contact Us</a></p>
       </footer>
   </body>

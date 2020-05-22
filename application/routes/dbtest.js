@@ -23,7 +23,6 @@ router.get('/getAllPostsP', (req, res, next) =>{
     db.query('SELECT * from posts;')
     .then(([results, fields]) => {
         console.log(results);
-        // res.send(results);  // bc we only need id 2
         return db.query('SELECT * FROM posts WHERE id=2');
     })
     .then(([results, fields]) => {
@@ -46,7 +45,6 @@ router.post('/createUser',(req, res, next) =>{
             // res.send('user was made');
         }else{
             res.redirect('/registration.html');
-            // res.send('user was not made for some reason');
         }
     })
     .catch((err) =>{

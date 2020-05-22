@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet"type="text/css" href="../stylesheets/css.css">
+    </head>
+    <body>
+        <div class="grid-container">
+            <header class="site-header">
+                <h1>Grid Example</h1>
+                <nav>
+                    <div class="shadow">it1</div>
+                    <div class="shadow">it1</div>                    <div>it1</div>
+                    <div class="shadow">it1</div>
+                    <div class="shadow">it1</div>
+                    <div class="shadow">it1</div>
+                </nav>
+            </header>
+            <aside class="site-lsidebar">L-Sidebar</aside>
+            <div class="site-content">Content</div>
+            <footer class="site-footer">Footer</footer>
+            <aside class="site-rsidebar">R-Sidebar</aside>
+        </div>
+        <script>
+            function buildMessage(msgData){
+
+
+            let url = document.URL.split('/');
+            let _id = url[url.length-1];
+            let postURL = "http://localhost:3000/posts/getRecentPosts/"+ _id;
+                fetch(postURL)
+                .then((data) => data.json())
+                .then((dataAsObject) => {
+                    console.log(dataAsObject);
+                })
+                .catch((err) => console.log(err));
+            }
+        </script>
+    </body>
+</html>

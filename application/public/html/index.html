@@ -5,39 +5,96 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Express</title>
         <title>CSC317 Website Design</title>
-        <!-- <link rel="stylesheet"type="text/css" href="public/stylesheets/websit.css"> -->
         <link rel="stylesheet"type="text/css" href="/websit.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script defer src="/frontendjs.js"></script>
     
     </head>
-    <form action="dbtest/createUser" method="POST" enctype="application/x-www-form-urlencoded">
-        <div class="website">
-            <header>
-                <a href="#"> <img id="myLoger" 
-                    src="https://res.cloudinary.com/drsto9lek/image/upload/c_scale,w_150/v1588366151/youtube_profile_image_mzwudr.png">
-                </a>
-                <nav>
-                    <ul class="nav_links">
-                    <li id="lis"> <a href="#"> HOME</a></li>
-                    <li id="liss"> <a href="signin.html">Signin</a></li>
-                    <li id="cta"> <a href="postimage.html"> Post </a></li>
-                    </ul>
-                </nav>
-                
-                <h3>HTML PPA PAUL's PHOTOS APP</h3>
-                
-                <div class="search-box">
-                    <input type="text" name="" class="search-text" placeholder="Type to search">
-                    <a class="search-btn" href="#"> 
-                    <i class="fas fa-search"></i>
+    <body>
+        <form action="dbtest/createUser" method="POST" enctype="application/x-www-form-urlencoded">
+            <div class="website">
+                <header>
+                    <a href="#"> <img id="myLoger" 
+                        src="https://res.cloudinary.com/drsto9lek/image/upload/c_scale,w_150/v1588366151/youtube_profile_image_mzwudr.png">
                     </a>
+                    <nav>
+                        <ul class="nav_links">
+                        <li id="lis"> <a href="#"> HOME</a></li>
+                        <li id="liss"> <a href="signin">Signin</a></li>
+                        <li id="cta"> <a href="postimage"> Post </a></li>
+                        </ul>
+                    </nav>
+                    
+                    <h3> PPA PAUL's PHOTOS APP</h3>
+
+                    <div class="search-box">
+                        <input id="text" name=" search-text" class="search-text" placeholder="Type to search">
+                        <a id="search-btn" href="#"> 
+                        <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </header>
+            </div>
+            <body>
+                <div id="website"></div>
+                <div id="grid-container-shadow">
+                    <div class="site-sidebar"> Sidebar </div>
+                    <div class="site-content"> CONTENT </div>
+                        <div class="pics-content"> PICS </div>
+            
+                    <div class="site-footer"> FOOTER </div> 
+                
+                    <div class="extra-item"> Extra item </div>
+                    <div> Extra item </div>
+                    
                 </div>
-            </header>
-        </div>
-    </form>
-    <footer>
-        <p>Asu Paul Lane @ c 2020<br>
-        <a href="pasu@mail.sfsu.edu">Contact Us</a></p>
-    </footer>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script defer src="/frontendjs.js"></script>
+            </body>
+        </form>
+        <div class="main-content"></div>
+        <footer>
+            <p>Asu Paul Lane &copy; 2020<br>
+            <a href="pasu@mail.sfsu.edu">Contact Us</a></p>
+        </footer>
+        <script>
+            function createCard(data) {
+                return `<div id=post-${data.id} class=card> \
+                            <img class="card-image" src="${data.thumbnail}"> \
+                            <div class "card-body"> \
+                                <p class="card-title>${data.title}</p> \
+                                <p class = "card=text">${data.decription}</p> \
+                                <a href="/imagepost/${data.id}" class="anchor-buttons"Details</a> \
+                            </div> \
+                        </div>`;
+            }
+
+
+            function runSearch(){
+                let searchTerm = document.getElementById('text').value;
+                let searchURL = 'http://localhost:3000/posts/search/'+searchTerm;
+                fetch(searchURL)
+                .then((data) => data.json())
+                .then((dataAsObject) => {
+                    let _html = "";
+                    dataAsObject.forEach((post) => {
+                        _html += createCard(post);
+                    })
+                    document.getElementById('website').innerHTML = _html;
+                })
+                .catch((err) => console.log(err));
+            }
+            document.getElementById('search-btn').onclick = runSearch;
+            
+                fetch("http://localhost:3000/posts/getRecentPosts/")
+                .then((data) => data.json())
+                .then((dataAsObject) => {
+                    let _html = "";
+                    dataAsObject.forEach((post) => {
+                        _html += createCard(post);
+                    })
+                    document.getElementById('grid-container-shadow').innerHTML = _html;
+                })
+                .catch((err) => console.log(err));
+        </script>
+    </body>
+    
 </html>

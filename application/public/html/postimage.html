@@ -1,69 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- <title>Express</title> -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CSC317 Website Design</title>
-        <!-- <link rel="stylesheet"type="text/css" href="public/stylesheets/websit.css"> -->
         <link rel="stylesheet"type="text/css" href="/websit.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"> </script>
+        <script defer src="/frontendjs.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
-    
-    <div class="website">
-        <header>
-            <a href="#"> <img id="myLoger" 
-                src="https://res.cloudinary.com/drsto9lek/image/upload/c_scale,w_150/v1588366151/youtube_profile_image_mzwudr.png"> 
-            </a>
-
-            <nav>
-                <ul class="nav_links">
-                    <li id="lis"> <a href="homepage.html"> HOME</a></li>
-                    <li id="lis"> <a href="signin.html">Signin</a></li>
-                    <li> <a class="cta" href="#"> <button> Contact</button> </a>  </li>
-                </ul>
-            </nav>
-
-            <h3> hhPPA PAUL's PHOTOS APP</h3>
-            <div class="search-box">
-                <input type="text" name="" class="search-text" placeholder="Type to search">
-                <a class="search-btn" href="#">
-                    <i class="fas fa-search"></i>
-                </a>
-            </div>
-        </header>
+    <body>
         
-        <body>
-            <form action="/posts/createPost" method="POST" enctype="multipart/form-data"> 
-            <!-- <form action="dbtest/users/post" method="POST" enctype="application/x-www-form-urlencoded">  -->
-                <div class="all">
-                    <h1>Post Image Form</h1>
-                    <div class="everything">
-                        <input type="text" id="postTitle" placeholder="Post Title" name="title"/>
-                        <!-- <br> -->
-                        <input type="text" id="Postdescription" placeholder="Post Description" name="description" />
-                        <br>
-                        <input type="file" id="postTitle" name="uploadImage">
-                        <br>
+        <div class="website">
+            <header>
+                <a href="#"> <img id="myLoger" 
+                    src="https://res.cloudinary.com/drsto9lek/image/upload/c_scale,w_150/v1588366151/youtube_profile_image_mzwudr.png"> 
+                </a>
 
-                        <a href="#"> <button id="submit"> SUBMIT</button></a>
-                        <!-- <button id="clear"> CLEAR</button>
-                        <input type="password" id="pass" placeholder="PASSWORD" name="password"> 
-                        <br> -->
-                        <button id="clear"> CLEAR</button>
-                        <p> Do not have an account? <a href="registration.html"> Register Here!</a></p>
+                <nav>
+                    <ul class="nav_links">
+                        <li id="lis"> <a href="homepage"> HOME</a></li>
+                        <li id="lis"> <a href="signin">Signin</a></li>
+                        <li> <a class="cta" href="#"> <button> Contact</button> </a>  </li>
+                    </ul>
+                </nav>
 
-                        <br>
-                        <input type="checkbox" checked> I agreed to the <a href="#"> terms and conditions</a>
-                    </div>
+                <h3> PPA PAUL's PHOTOS APP</h3>
+                <div class="search-box">
+                    <input type="text" name="" class="search-text" placeholder="Type to search">
+                    <a class="search-btn" href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
                 </div>
-            </form>
-            <p id="end"></p>
-            <footer>
-                <p>Asu Paul Lane @ c 2020<br>
-                <a href="pasu@mail.sfsu.edu">Contact Us</a></p>
-            </footer>
-        </body>
-    </div>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"> </script>
-    <script defer src="/frontendjs.js"></script>
+            </header>
+            
+            <body>
+                <form id="post-image"
+                    class="form-grid"
+                    method="POST" 
+                    enctype="multipart/form-data"> 
+                    <div class="all">
+                        <h1>Post Image Form</h1>
+                        <div class="everything">
+                            <input type="text" id="post-title" placeholder="Post Title" name="title"/>
+                            <input type="text" id="Postdescription" placeholder="Post Description" name="description" />
+                            <br>
+                            <input type="file" id="postTitle" name="uploadImage">
+                            <br>
+
+                            <a href="#"> <button id="submit"> SUBMIT</button></a>
+                            <button id="clear"> CLEAR</button>
+                            <p> Do not have an account? <a href="registration"> Register Here!</a></p>
+
+                            <br>
+                            <input type="checkbox" checked> I agreed to the <a href="#"> terms and conditions</a>
+                        </div>
+                    </div>
+                </form>
+                <p id="end"></p>
+                <footer>
+                    <p>Asu Paul Lane &copy; 2020<br>
+                    <a href="pasu@mail.sfsu.edu">Contact Us</a></p>
+                </footer>
+            </body>
+        </div>
+        <script>
+            const _form = document.getElementById('post-image');
+            _form.onsubmit = function(event) {
+                event.preventDefault();
+                let _body = new FormData(_form);
+
+                
+                axios('/posts/createPost',{
+                    data: _body,
+                    method: "POST"
+                })
+                .then((data) =>{
+                    console.log(data.data);
+                    alert(data.data.message);
+                    location.replace(data.data.redirect);
+                })
+                .catch(err => console.log(err));
+            }
+        </script>
+    </body>
 </html>
